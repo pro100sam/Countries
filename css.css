@@ -42,7 +42,6 @@ body {
 }
 
 .wrapper {
-  /* width: 1440px; */
   width: 100%;
   min-height: 1024px;
   --bg1: #fcfcfc;
@@ -50,11 +49,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.master {
-  /* padding: 0px 84px 0px 84px; */
-  box-sizing: border-box;
 }
 
 a {
@@ -73,9 +67,12 @@ img {
   align-items: center;
   background-color: var(--bg2);
   height: 80px;
-  padding: 0px 80px 0px 80px;
   --color3: rgba(0, 0, 0, 0.052);
   box-shadow: 0 2px 4px 0 var(--color3);
+}
+
+.wrapper__header {
+  padding: 0px 80px 0px 80px;
 }
 
 .header a {
@@ -162,7 +159,6 @@ img {
 
 .master__search .filter__dropdown ul {
   margin: 12px 0px 0px 0px;
-  padding-left: 0px;
   background-color: var(--bg2);
   border-radius: 5px;
   padding: 16px 24px 16px 24px;
@@ -201,16 +197,19 @@ img {
   height: 6px;
 }
 
-main {
+.main {
   display: grid;
   gap: 72px;
   grid-template: 336px 336px/264px 264px 264px 264px;
-  padding: 0px 84px 0px 84px;
   --color5: rgba(0, 0, 0, 0.025);
 }
 
+.master__main {
+  padding: 0px 84px 0px 84px;
+}
+
 @media (max-width: 1439px) {
-  .header {
+  .wrapper__header {
     padding: 0px 40px 0px 40px;
   }
 
@@ -234,7 +233,7 @@ main {
     align-items: center;
   }
 
-  main {
+  .master__main {
     grid-template: 336px 336px 336px 336px/ 264px 264px;
     padding: 0px 55px 0px 55px;
   }
@@ -244,9 +243,6 @@ main {
   .master__search {
     flex-direction: column;
     height: 136px;
-  }
-
-  .master__search {
     margin: 24px 0px 32px 0px;
   }
 
@@ -260,7 +256,7 @@ main {
     margin: 40px 0px 0px 16px;
   }
 
-  main {
+  .main {
     grid-template: 336px 336px 336px 336px 336px 336px 336px 336px/264px;
   }
 }
@@ -271,7 +267,7 @@ main {
   box-shadow: 0 2px 9px 0 var(--color5);
 }
 
-main .item__title {
+.main .item__title {
   font-size: 18px;
   line-height: 145%;
   font-family: NunitoSans-ExtraBold;
@@ -279,11 +275,11 @@ main .item__title {
   margin: 28px 0px 16px 0px;
 }
 
-main .item__text {
+.main .item__text {
   padding: 0px 0px 48px 24px;
 }
 
-main .item__text .subtitle div {
+.main .item__text .subtitle div {
   font-size: 14px;
   line-height: 16px;
   font-family: NunitoSans-Light;
@@ -291,11 +287,11 @@ main .item__text .subtitle div {
   margin: 0px 0px 8px 0px;
 }
 
-main .item__text .subtitle div:last-child {
+.main .item__text .subtitle div:last-child {
   margin: 0;
 }
 
-main .item__text .subtitle div span {
+.main .item__text .subtitle div span {
   font-size: 14px;
   line-height: 16px;
   font-family: NunitoSans-SemiBold;
