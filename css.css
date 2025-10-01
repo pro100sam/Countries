@@ -42,37 +42,19 @@ body {
 }
 
 .wrapper {
-  max-width: 1440px;
-  height: 1024px;
+  /* width: 1440px; */
+  width: 100%;
+  min-height: 1024px;
   --bg1: #fcfcfc;
   background-color: var(--bg1);
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
-/* @media (max-width: 1440px) {
-  .wrapper {
-    max-width: 970px;
-  }
-}
-
-@media (max-width: 992px) {
-  .wrapper {
-    max-width: 750px;
-  }
-}
-
-@media (max-width: 767px) {
-  .wrapper {
-    max-width: none;
-  }
-} */
 
 .master {
-  padding: 0px 84px 96px 84px;
-  /* width: 1440px; */
+  /* padding: 0px 84px 0px 84px; */
   box-sizing: border-box;
-  width: 100%;
-  margin: 0 auto;
 }
 
 a {
@@ -80,19 +62,20 @@ a {
 }
 
 img {
-  /* width: 264px; */
-  /* width: 100%; */
-  height: 160px;
+  width: 100%;
 }
 
 .header {
+  width: 100%;
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: var(--bg2);
   height: 80px;
-  padding: 0px 84px 0px 84px;
-  background-color: aqua;
+  padding: 0px 80px 0px 80px;
+  --color3: rgba(0, 0, 0, 0.052);
+  box-shadow: 0 2px 4px 0 var(--color3);
 }
 
 .header a {
@@ -117,8 +100,8 @@ img {
 }
 
 .header .icon {
-  width: 18px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
 }
 
 .master__search {
@@ -126,11 +109,15 @@ img {
   display: flex;
   justify-content: space-between;
   height: 56px;
+  --color4: rgba(0, 0, 0, 0.0532);
 }
 
 .master__search form {
-  /* width: 480px; */
+  width: 480px;
   background-color: var(--bg2);
+  margin: 0px 8px 0px 0px;
+  border-radius: 5px;
+  box-shadow: 0 2px 9px 0 var(--color4);
 }
 
 .master__search form .header__icon {
@@ -159,11 +146,13 @@ img {
 
 .master__search .filter {
   position: relative;
+  background-color: var(--bg2);
+  width: 200px;
+  box-shadow: 0 2px 9px 0 var(--color4);
 }
 
 .master__search .filter__dropdown {
   display: none;
-  position: absolute;
   width: 100%;
 }
 
@@ -173,9 +162,10 @@ img {
 
 .master__search .filter__dropdown ul {
   margin: 12px 0px 0px 0px;
-  padding: 16px 24px 16px 24px;
+  padding-left: 0px;
   background-color: var(--bg2);
   border-radius: 5px;
+  padding: 16px 24px 16px 24px;
 }
 
 .master__search .filter__dropdown li {
@@ -193,17 +183,17 @@ img {
 
 .master__search .filter button {
   border: 0;
-  /* width: 200px; */
-  height: 100%;
+  width: 100%;
   background-color: var(--bg2);
   font-size: 14px;
   line-height: 145%;
   font-family: NunitoSans-Regular;
   color: var(--color1);
-  padding: 18px 24px 18px 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 16px 24px 16px 24px;
+  border-radius: 5px;
 }
 
 .master__search .filter .icon {
@@ -214,35 +204,71 @@ img {
 main {
   display: grid;
   gap: 72px;
-  grid-template: 1fr 1fr/1fr 1fr 1fr 1fr;
-  margin: 0 auto;
+  grid-template: 336px 336px/264px 264px 264px 264px;
+  padding: 0px 84px 0px 84px;
+  --color5: rgba(0, 0, 0, 0.025);
 }
 
-/* @media (max-width: 1420px) {
-  main {
-    display: grid;
-    gap: 64px;
-    grid-template: 1fr 1fr/1fr 1fr 1fr 1fr;
+@media (max-width: 1439px) {
+  .header {
+    padding: 0px 40px 0px 40px;
   }
-} */
 
-/* @media (max-width: 992px) {
-  main {
-    max-width: 376px;
-    gap: 64px;
-    grid-template: 1fr 1fr 1fr 1fr/1fr 1fr;
+  .header a {
+    font-size: 14px;
   }
-} */
 
-@media (max-width: 980px) {
+  .header .darkMode div {
+    font-size: 12px;
+    line-height: 135%;
+  }
+
+  .header .icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .master {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   main {
-    display: grid;
-    gap: 4px;
-    grid-template: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr/1fr;
+    grid-template: 336px 336px 336px 336px/ 264px 264px;
+    padding: 0px 55px 0px 55px;
   }
 }
+
+@media (max-width: 767px) {
+  .master__search {
+    flex-direction: column;
+    height: 136px;
+  }
+
+  .master__search {
+    margin: 24px 0px 32px 0px;
+  }
+
+  .master__search form {
+    width: 343px;
+    height: 48px;
+    margin: 0px 16px 0px 16px;
+  }
+
+  .master__filter {
+    margin: 40px 0px 0px 16px;
+  }
+
+  main {
+    grid-template: 336px 336px 336px 336px 336px 336px 336px 336px/264px;
+  }
+}
+
 .item {
   background-color: var(--bg1);
+  width: 100%;
+  box-shadow: 0 2px 9px 0 var(--color5);
 }
 
 main .item__title {
